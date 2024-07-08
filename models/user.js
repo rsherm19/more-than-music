@@ -13,10 +13,12 @@ const beatSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  key: {
+  keyLetter: {
     type: String,
     required: true,
   }, 
+  keyAccidental: String, 
+  keyScale: String, 
   price: {
     type: Number,
     required: true,

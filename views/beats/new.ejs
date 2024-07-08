@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Food</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Upload a Beat</h1>
+    <form action="/users/<%= user._id %>/beats" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title">
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre" id="genre">
+        <label for="tempo">Tempo:</label>
+        <input type="number" name="tempo" id="tempo" maxlength="3">
+        <label for="keyLetter">Key:</label>
+        <select name="keyLetter" id="keyLetter">
+            <option></option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+        </select>
+
+        <select name="keyAccidental" id="keyAccidental">
+            <option></option>
+            <option value="#">#</option>
+            <option value="b">b</option>
+        </select>
+
+        <select name="keyScale" id="keyScale">
+            <option></option>
+            <option value="major">Major</option>
+            <option value="minor">Minor</option>
+        </select>
+        <label for="price">Price:</label>
+        <input type="numer" name="price" id="price">
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

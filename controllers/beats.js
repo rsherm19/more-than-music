@@ -27,11 +27,13 @@ router.post('/', async (req, res) => {
         title: req.body.title,
         genre: req.body.genre,
         tempo: req.body.tempo,
-        key: req.body.key,
+        keyLetter: req.body.keyLetter,
+        keyAccidental: req.body.keyAccidental,
+        keyScale: req.body.keyScale,
         price: req.body.price,
     }
     const beatExists = await User.findOne({
-        title: req.body.title,
+        title: req.body.title 
     });
     if (beatExists) {
         res.render('./beats/sorry.ejs');
@@ -54,7 +56,9 @@ router.put('/:beatId', async (req, res) => {
         title: req.body.title,
         genre: req.body.genre,
         tempo: req.body.tempo,
-        key: req.body.key,
+        keyLetter: req.body.keyLetter,
+        keyAccidental: req.body.keyAccidental,
+        keyScale: req.body.keyScale,
         price: req.body.price,
     }
     try {
