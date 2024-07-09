@@ -22,13 +22,13 @@ router.post('/sign-up', async (req, res) => {
     // Check if the username is already taken
     const userInDatabase = await User.findOne({ username: req.body.username });
     if (userInDatabase) {
-      return res.send('Username already taken.');
+      return res.render('auth/userTaken.ejs');
     }
   
     // Username is not taken already!
     // Check if the password and confirm password match
     if (req.body.password !== req.body.confirmPassword) {
-      return res.send('Password and Confirm Password must match');
+      return res.render('auth/passwords.ejs');
     }
   
     // Must hash the password before sending to the database
@@ -50,7 +50,7 @@ router.post('/sign-in', async (req, res) => {
     // First, get the user from the database
     const userInDatabase = await User.findOne({ username: req.body.username });
     if (!userInDatabase) {
-      return res.send('Login failed. Please try again.');
+      return res.render('auth/incorrect.ejs');
     }
   
     // There is a user! Time to test their password with bcrypt
@@ -59,7 +59,7 @@ router.post('/sign-in', async (req, res) => {
       userInDatabase.password
     );
     if (!validPassword) {
-      return res.send('Login failed. Please try again.');
+      return res.render('auth/incorrect.ejs');
     }
   
     // There is a user AND they had the correct password. Time to make a session!

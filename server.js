@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGODB_URI);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public')); // The way we learned to do this wasn't working on certain pages, so I used stack overflow for help
 
 app.use(
     session({

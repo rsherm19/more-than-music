@@ -19,7 +19,7 @@
         <label for="keyLetter">Key:</label>
         <select name="keyLetter" id="keyLetter">
             <option></option>
-            <option value="C" <% if (beatData.keyLetter === 'C') { %>selected="selected"<% } %>>C</option>
+            <option value="C" <% if (beatData.keyLetter === 'C') { %>selected="selected"<% } %>>C</option> <!-- I learned the selected="selected" from stack overflow -->
             <option value="D" <% if (beatData.keyLetter === 'D') { %>selected="selected"<% } %>>D</option>
             <option value="E" <% if (beatData.keyLetter === 'E') { %>selected="selected"<% } %>>E</option>
             <option value="F" <% if (beatData.keyLetter === 'F') { %>selected="selected"<% } %>>F</option>
