@@ -2,7 +2,7 @@
     <a href="/">Home</a>
     <% if(user) { %>
       <a href="/users/<%=user._id%>/beats">My Beats</a>
-      <!-- <a href="/users/community">Producers</a> -->
+      <a href="/users/producers">Producers</a>
       <a href="/users/<%=user._id%>/beats/new">Upload Beat</a>
       <a href="/auth/sign-out">Sign Out</a>
     <% } else { %>

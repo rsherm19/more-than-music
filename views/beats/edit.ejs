@@ -35,8 +35,8 @@
 
         <select name="keyScale" id="keyScale">
             <option></option>
-            <option value="major" <% if (beatData.keyScale === 'major') { %>selected="selected"<% } %>>Major</option>
-            <option value="minor" <% if (beatData.keyScale === 'minor') { %>selected="selected"<% } %>>Minor</option>
+            <option value="Major" <% if (beatData.keyScale === 'Major') { %>selected="selected"<% } %>>Major</option>
+            <option value="Minor" <% if (beatData.keyScale === 'Minor') { %>selected="selected"<% } %>>Minor</option>
         </select>
         <label for="price">Price:</label>
         <input type="numer" name="price" id="price" value="<%= beatData.price %>">

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>producer page</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= currentUser.username %></h1>
+    <ul>
+        <% currentUser.catalog.forEach((beat) => { %>
+            <li>
+                <span><%= beat.title %></span>
+                <span><%= beat.genre %></span>
+                <span><%= beat.tempo + ' bpm' %></span>
+                <span><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>
+                <span><%= '$' + beat.price %></span>
+            </li>
+        <% }); %>
+    </ul>
+    
+</body>
+</html>
