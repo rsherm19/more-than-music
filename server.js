@@ -23,6 +23,7 @@ mongoose.connect(process.env.MONGODB_URI);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(express.static(__dirname + '/public'));
 
 app.use(
     session({
