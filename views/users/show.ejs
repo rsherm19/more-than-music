@@ -15,7 +15,7 @@
         <ul>
             <% currentUser.catalog.forEach((beat) => { %>
                 <li>
-                    <span><%= beat.title %></span>
+                    <a href="" class="text-button"><%= beat.title %></a>
                     <span><%= beat.genre %></span>
                     <span><%= beat.tempo + ' bpm' %></span>
                     <span><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>

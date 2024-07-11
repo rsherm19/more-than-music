@@ -15,11 +15,15 @@
         <ul>
             <% catalog.forEach((beat) => { %>
                 <li>
-                    <a href="/users/<%= user._id %>/beats/<%= beat._id %>/edit"><%= beat.title %></a>
+                    <a href="/users/<%= user._id %>/beats/<%= beat._id %>/edit" class="text-button"><%= beat.title %></a>
                     <span><%= beat.genre %></span>
                     <span><%= beat.tempo + ' bpm' %></span>
                     <span><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>
-                    <span><%= '$' + beat.price %></span>
+                    <% if (beat.price === 0) { %>
+                        <span>Free</span>
+                    <% } else { %>
+                        <span><%= '$' + beat.price %></span>
+                    <% } %>
                 </li>
             <% }); %>
         </ul>

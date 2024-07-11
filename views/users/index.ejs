@@ -15,7 +15,7 @@
         <ul>
             <% allUsers.forEach((user) => { %>
                 <li>
-                    <a href="/users/producers/<%= user._id %>"><%= user.username %></a>
+                    <a href="/users/producers/<%= user._id %>" class="text-button"><%= user.username %></a>
                 </li>
             <% }); %>
         </ul>
