@@ -1,13 +1,18 @@
+<a href="/">
+  <img src="https://i.imgur.com/ufwgVk4.png" alt="logo that says More than Music" id="logo">
+</a>
 <span class="nav">
-  <a href="/">Home</a>
+  <a href="/" class="text-button">Home</a>
 <% if(user) { %>
-  <a href="/users/<%=user._id%>/beats">My Beats</a>
-  <a href="/users/producers">Producers</a>
-  <a href="/users/<%=user._id%>/beats/new">Upload Beat</a>
-  <a href="/auth/sign-out">Sign Out</a>
+  <a href="/users/<%=user._id%>/beats" class="text-button">My Beats</a>
+  <a href="/users/producers" class="text-button">Producers</a>
+  <a href="/users/<%=user._id%>/beats/new" class="text-button">Upload Beat</a>
+  <a href="/auth/sign-out" class="text-button">Sign Out</a>
 <% } else { %>
   <!-- <a href="/users/community">Producers</a> -->  
-  <a href="/auth/sign-in">Sign In</a>
-  <a href="/auth/sign-up">Sign Up</a>
+  <span class="login">
+    <a href="/auth/sign-up" class="text-button" id="sign-up">Sign Up</a>
+    <a href="/auth/sign-in" class="text-button" id="sign-in">Sign In</a>
+  </span>
 <% } %>
 </span>

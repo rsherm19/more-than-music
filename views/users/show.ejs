@@ -7,19 +7,22 @@
     <link href="/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1><%= currentUser.username %></h1>
-    <ul>
-        <% currentUser.catalog.forEach((beat) => { %>
-            <li>
-                <span><%= beat.title %></span>
-                <span><%= beat.genre %></span>
-                <span><%= beat.tempo + ' bpm' %></span>
-                <span><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>
-                <span><%= '$' + beat.price %></span>
-            </li>
-        <% }); %>
-    </ul>
-    
+    <header>
+        <%- include('../partials/_navbar.ejs') %>
+    </header>
+    <main>
+        <h1><%= currentUser.username %></h1>
+        <ul>
+            <% currentUser.catalog.forEach((beat) => { %>
+                <li>
+                    <span><%= beat.title %></span>
+                    <span><%= beat.genre %></span>
+                    <span><%= beat.tempo + ' bpm' %></span>
+                    <span><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>
+                    <span><%= '$' + beat.price %></span>
+                </li>
+            <% }); %>
+        </ul>
+    </main>    
 </body>
 </html>

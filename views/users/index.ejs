@@ -7,14 +7,18 @@
     <link href="/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>Producers</h1>
-    <ul>
-        <% allUsers.forEach((user) => { %>
-            <li>
-                <a href="/users/producers/<%= user._id %>"><%= user.username %></a>
-            </li>
-        <% }); %>
-    </ul>
+    <header>
+        <%- include('../partials/_navbar.ejs') %>
+    </header>
+    <main>
+        <h1>Producers</h1>
+        <ul>
+            <% allUsers.forEach((user) => { %>
+                <li>
+                    <a href="/users/producers/<%= user._id %>"><%= user.username %></a>
+                </li>
+            <% }); %>
+        </ul>
+    </main>
 </body>
 </html>

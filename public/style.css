@@ -22,6 +22,7 @@ header {
     grid-area: header;
     display: grid;
     grid-template-columns: auto 1fr;
+    /* grid-template-areas: ; */
     align-items: center;
     border-bottom: 2px solid rgb(201, 201, 201);
     background-color: rgb(37, 37, 37);
@@ -30,31 +31,58 @@ header {
 main {
     grid-area: main;
     background-color: rgb(29, 29, 29);
+    text-align: center;
+    padding: 2rem;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
 }
 
 a {
     text-decoration: none;
     font-size: 1.2rem;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
-a:hover {
+.text-button:hover {
     color: red;
+    font-size: 1.22rem;
 }
 
 .nav {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 3vw 0 3vw;
 }
 
-.nav a {
+.nav > a {
     position: relative;
     top: 20px;
 }
 
+.login a {
+    margin: 0 5px;
+}
+
+#sign-in {
+    background-color: red;
+    padding: 10px;
+    border-radius: 7%;
+    transition: 0.2s;
+}
+
+#sign-in:hover {
+    color: black;
+    padding: 11px;
+}
+
 #logo {
+    /* grid-area: logo; */
     width: 80px;
     height: 70px;
     margin: 15px;
+    /* padding-right: 3vw; */
 }

@@ -7,15 +7,22 @@
     <link href="/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>_____'s Catalog</h1>
-    <h2>Your beats:</h2>
-    <ul>
-        <% catalog.forEach((beat) => { %>
-            <li>
-                <a href="/users/<%= user._id %>/beats/<%= beat._id %>/edit"><%= beat.title %></a>
-            </li>
-        <% }); %>
-    </ul>
+    <header>
+        <%- include('../partials/_navbar.ejs') %>
+    </header>
+    <main>
+        <h1>My Beats</h1><br>
+        <ul>
+            <% catalog.forEach((beat) => { %>
+                <li>
+                    <a href="/users/<%= user._id %>/beats/<%= beat._id %>/edit"><%= beat.title %></a>
+                    <span><%= beat.genre %></span>
+                    <span><%= beat.tempo + ' bpm' %></span>
+                    <span><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>
+                    <span><%= '$' + beat.price %></span>
+                </li>
+            <% }); %>
+        </ul>
+    </main>
 </body>
 </html>
