@@ -1,0 +1,34 @@
+main {
+    background: url('https://i.imgur.com/50H6ios.jpeg');
+    background-size: cover;
+}
+
+h1 {
+    margin: 0 auto;
+    width: 40rem;
+    font-size: 3rem;
+    font-style: italic;
+    margin-top: 4vh;
+}
+
+#start-creating {
+    background-color: rgb(255, 0, 0);
+    font-size: 1.5rem;
+    padding: 15px;
+    border-radius: 7px;
+    transition: 0.2s;
+    position: relative;
+    top: 4vh;
+}
+
+#start-creating:hover {
+    color: black;
+    padding: 11px;
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        background-position: center;
+        background-size: 150%;
+    }
+}

@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
   <link href="/style.css" rel="stylesheet" type="text/css">
+  <link href="/home.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <header>
     <%- include('./partials/_navbar.ejs') %>
   </header>
   <main>
-
+    <h1>A Collective of Musicians Striving to Make Music that Glorifies God.</h1><br>
+    <% if (user) { %>
+      <a href="/users/<%= user._id %>/beats/new" class="text-button" id="start-creating">Start Creating</a>
+    <% } else { %>
+      <a href="/auth/sign-in" class="text-button" id="start-creating">Start Creating</a>
+    <% } %>
   </main>
 </body>
 </html>
