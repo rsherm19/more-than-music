@@ -16,9 +16,9 @@ const beatSchema = new mongoose.Schema({
   keyLetter: {
     type: String,
     required: true,
-  }, 
-  keyAccidental: String, 
-  keyScale: String, 
+  },
+  keyAccidental: String,
+  keyScale: String,
   price: {
     type: Number,
     required: true,

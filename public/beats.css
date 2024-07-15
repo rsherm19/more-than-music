@@ -5,8 +5,8 @@ ul {
 li {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    'title genre tempo key price';
+    grid-template-areas:
+        'title genre tempo key price';
     margin: 1.3rem 0;
     padding: 0 0 1rem 0;
     border-bottom: 2px solid grey;

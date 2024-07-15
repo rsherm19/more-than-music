@@ -17,10 +17,6 @@ const port = process.env.PORT ? process.env.PORT : '3000';
 
 mongoose.connect(process.env.MONGODB_URI);
 
-// mongoose.connection.on('connected', () => {
-//     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
-//   });
-
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public')); // The way we learned to do this wasn't working on certain pages, so I used stack overflow for help
@@ -45,6 +41,4 @@ app.use(isSignedIn);
 app.use('/users/:userId/beats', beatsController);
 app.use('/users/producers', usersController);
 
-app.listen(port, () => {
-  console.log(`The express app is ready on port ${port}!`);
-});
+app.listen(port);

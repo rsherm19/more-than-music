@@ -1,8 +1,10 @@
 input {
     color: black;
-    padding: 7px;
+    padding: 7px 2px 7px 7px;
 }
 
-button, select, option {
+button,
+select,
+option {
     color: black;
 }

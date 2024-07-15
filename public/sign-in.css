@@ -25,14 +25,6 @@ input:hover {
     background-color: rgb(255, 255, 255);
 }
 
-.input-box {
-    padding: 0.3rem 0 1.5rem 0;
-}
-
-#password-box {
-    margin-bottom: 0.7rem;
-}
-
 button {
     border: none;
     outline: none;
@@ -47,4 +39,18 @@ button {
 button:hover {
     color: black;
     font-size: 1.22rem;
+}
+
+.input-box {
+    padding: 0.3rem 0 1.5rem 0;
+}
+
+#password-box {
+    margin-bottom: 0.7rem;
+}
+
+#incorrect {
+    font-size: 0.8rem;
+    position: relative;
+    bottom: 1.5rem;
 }

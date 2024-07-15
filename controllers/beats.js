@@ -17,7 +17,7 @@ router.get('/new', (req, res) => {
 router.get('/:beatId/edit', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
     const beatData = currentUser.catalog.id(req.params.beatId);
-    res.render('./beats/edit.ejs',{
+    res.render('./beats/edit.ejs', {
         beatData: beatData,
     });
 });
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
         price: req.body.price,
     }
     const beatExists = await User.findOne({
-        title: req.body.title 
+        title: req.body.title
     });
     if (beatExists) {
         res.render('./beats/sorry.ejs');
