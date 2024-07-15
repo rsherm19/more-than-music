@@ -1,0 +1,50 @@
+form {
+    background-color: rgb(87, 87, 87, 0.3);
+    font-size: 0.9rem;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding-top: 2rem;
+    width: 22rem;
+    height: 25.4rem;
+    border-radius: 40px;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.4) inset;
+}
+
+input {
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    margin: 2px;
+    background-color: rgb(201, 201, 201);
+    font-size: 1rem;
+    box-shadow: 0px 5px 10px 2px rgb(0, 0, 0, 0.4);
+    transition: 0.2s;
+}
+
+input:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.input-box {
+    padding: 0.3rem 0 1.5rem 0;
+}
+
+#confirm-password-box {
+    margin-bottom: 0.7rem;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: red;
+    color: rgb(234, 233, 221);
+    font-size: 1.1rem;
+    padding: 10px 17px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+button:hover {
+    color: black;
+    font-size: 1.22rem;
+}

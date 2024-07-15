@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>producer page</title>
     <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/beats.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
         <%- include('../partials/_navbar.ejs') %>
     </header>
     <main>
-        <h1><%= currentUser.username %></h1>
+        <h1><%= currentUser.username %></h1><br>
         <ul>
             <% currentUser.catalog.forEach((beat) => { %>
                 <li>
-                    <a href="" class="text-button"><%= beat.title %></a>
-                    <span><%= beat.genre %></span>
-                    <span><%= beat.tempo + ' bpm' %></span>
-                    <span><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>
-                    <span><%= '$' + beat.price %></span>
+                    <a href="" class="text-button" id="title"><%= beat.title %></a>
+                    <span id="genre"><%= beat.genre %></span>
+                    <span id="tempo"><%= beat.tempo + ' bpm' %></span>
+                    <span id="key"><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>
+                    <% if (beat.price === 0) { %>
+                        <span class="price">Free</span>
+                    <% } else { %>
+                        <span class="price"><%= '$' + beat.price %></span>
+                    <% } %>
                 </li>
             <% }); %>
         </ul>

@@ -1,55 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>edit beat</title>
     <link href="/style.css" rel="stylesheet" type="text/css">
     <link href="/form.css" rel="stylesheet" type="text/css">
+    <link href="/edit.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
     <header>
         <%- include('../partials/_navbar.ejs') %>
     </header>
     <main>
         <h1>Edit Beat</h1>
-        <form action="/users/<%= user._id %>/beats/<%= beatData._id %>?_method=PUT" method="POST">
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title" value="<%= beatData.title %>">
-            <label for="genre">Genre:</label>
-            <input type="text" name="genre" id="genre" value="<%= beatData.genre %>">
-            <label for="tempo">Tempo:</label>
-            <input type="number" name="tempo" id="tempo" maxlength="3" value="<%= beatData.tempo %>">
-            <label for="keyLetter">Key:</label>
-            <select name="keyLetter" id="keyLetter">
-                <option></option>
-                <option value="C" <% if (beatData.keyLetter === 'C') { %>selected="selected"<% } %>>C</option> <!-- I learned the selected="selected" from stack overflow -->
-                <option value="D" <% if (beatData.keyLetter === 'D') { %>selected="selected"<% } %>>D</option>
-                <option value="E" <% if (beatData.keyLetter === 'E') { %>selected="selected"<% } %>>E</option>
-                <option value="F" <% if (beatData.keyLetter === 'F') { %>selected="selected"<% } %>>F</option>
-                <option value="G" <% if (beatData.keyLetter === 'G') { %>selected="selected"<% } %>>G</option>
-                <option value="A" <% if (beatData.keyLetter === 'A') { %>selected="selected"<% } %>>A</option>
-                <option value="B" <% if (beatData.keyLetter === 'B') { %>selected="selected"<% } %>>B</option>
-            </select>
-    
-            <select name="keyAccidental" id="keyAccidental">
-                <option></option>
-                <option value="#" <% if (beatData.keyAccidental === '#') { %>selected="selected"<% } %>>#</option>
-                <option value="b" <% if (beatData.keyAccidental === 'b') { %>selected="selected"<% } %>>b</option>
-            </select>
-    
-            <select name="keyScale" id="keyScale">
-                <option></option>
-                <option value="Major" <% if (beatData.keyScale === 'Major') { %>selected="selected"<% } %>>Major</option>
-                <option value="Minor" <% if (beatData.keyScale === 'Minor') { %>selected="selected"<% } %>>Minor</option>
-            </select>
-            <label for="price">Price:</label>
-            <input type="numer" name="price" id="price" value="<%= beatData.price %>">
-            <button type="submit">Update</button><br><br>
-        </form>
-        <form action="/users/<%= user._id %>/beats/<%= beatData._id %>?_method=DELETE" method="POST">
-            <button>Delete</button>
-        </form>
+        <div class="form-container">
+            <form action="/users/<%= user._id %>/beats/<%= beatData._id %>?_method=PUT" method="POST">
+                <div class="input-box-row">
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" value="<%= beatData.title %>">
+                    <label for="genre">Genre:</label>
+                    <input type="text" name="genre" id="genre" value="<%= beatData.genre %>">
+                </div>
+                <div class="input-box-row">
+                    <label for="tempo">Tempo:</label>
+                    <input type="number" name="tempo" id="tempo" maxlength="3" value="<%= beatData.tempo %>">
+                    <label for="keyLetter">Key:</label>
+                    <select name="keyLetter" id="keyLetter">
+                        <option></option>
+                        <option value="C" <% if (beatData.keyLetter==='C' ) { %>selected="selected"<% } %>>C</option>
+                        <!-- I learned the selected="selected" from stack overflow -->
+                        <option value="D" <% if (beatData.keyLetter==='D' ) { %>selected="selected"<% } %>>D</option>
+                        <option value="E" <% if (beatData.keyLetter==='E' ) { %>selected="selected"<% } %>>E</option>
+                        <option value="F" <% if (beatData.keyLetter==='F' ) { %>selected="selected"<% } %>>F</option>
+                        <option value="G" <% if (beatData.keyLetter==='G' ) { %>selected="selected"<% } %>>G</option>
+                        <option value="A" <% if (beatData.keyLetter==='A' ) { %>selected="selected"<% } %>>A</option>
+                        <option value="B" <% if (beatData.keyLetter==='B' ) { %>selected="selected"<% } %>>B</option>
+                    </select>
+        
+                    <select name="keyAccidental" id="keyAccidental">
+                        <option></option>
+                        <option value="#" <% if (beatData.keyAccidental==='#' ) { %>selected="selected"<% } %>>#</option>
+                        <option value="b" <% if (beatData.keyAccidental==='b' ) { %>selected="selected"<% } %>>b</option>
+                    </select>
+        
+                    <select name="keyScale" id="keyScale">
+                        <option></option>
+                        <option value="Major" <% if (beatData.keyScale==='Major' ) { %>selected="selected"<% } %>>Major</option>
+                        <option value="Minor" <% if (beatData.keyScale==='Minor' ) { %>selected="selected"<% } %>>Minor</option>
+                    </select>
+                </div>
+                <div class="input-box-row">
+                    <label for="price">Price:</label>
+                    <input type="numer" name="price" id="price" value="<%= beatData.price %>">
+                </div>
+                <button type="submit" id="update">Update</button>
+            </form>
+            <form action="/users/<%= user._id %>/beats/<%= beatData._id %>?_method=DELETE" method="POST">
+                <button id="delete">Delete</button>
+            </form>
+        </div>
     </main>
 </body>
+
 </html>

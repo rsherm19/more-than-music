@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My catalog</title>
     <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/beats.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
@@ -15,14 +16,14 @@
         <ul>
             <% catalog.forEach((beat) => { %>
                 <li>
-                    <a href="/users/<%= user._id %>/beats/<%= beat._id %>/edit" class="text-button"><%= beat.title %></a>
-                    <span><%= beat.genre %></span>
-                    <span><%= beat.tempo + ' bpm' %></span>
-                    <span><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>
+                    <a href="/users/<%= user._id %>/beats/<%= beat._id %>/edit" class="text-button" id="title"><%= beat.title %></a>
+                    <span id="genre"><%= beat.genre %></span>
+                    <span id="tempo"><%= beat.tempo + ' bpm' %></span>
+                    <span id="key"><%= beat.keyLetter + beat.keyAccidental + ' ' + beat.keyScale%></span>
                     <% if (beat.price === 0) { %>
-                        <span>Free</span>
+                        <span class="price">Free</span>
                     <% } else { %>
-                        <span><%= '$' + beat.price %></span>
+                        <span class="price"><%= '$' + beat.price %></span>
                     <% } %>
                 </li>
             <% }); %>

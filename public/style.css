@@ -51,15 +51,9 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3vw;
-}
-
-.nav > a {
     position: relative;
     top: 10px;
-    /* flex-basis: 100%;
-    flex-grow: 1; */
-    /* background: rgb(255, 0, 255); */
+    padding: 0 3vw;
 }
 
 .text-button:hover {
@@ -99,6 +93,6 @@ a {
     /* grid-area: logo; */
     width: 80px;
     height: 70px;
-    margin: 15px;
+    margin: 25px 10px 20px 25px;
     /* padding-right: 3vw; */
 }

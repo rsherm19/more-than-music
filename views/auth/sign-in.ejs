@@ -7,6 +7,7 @@
   <title>Sign In</title>
   <link href="/style.css" rel="stylesheet" type="text/css">
   <link href="/form.css" rel="stylesheet" type="text/css">
+  <link href="/sign-in.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -14,12 +15,16 @@
     <%- include('../partials/_navbar.ejs') %>
   </header>
   <main>
-    <h1>Sign in</h1>
+    <h1>Sign in</h1><br>
     <form action="/auth/sign-in" method="POST">
       <label for="username">Username:</label>
-      <input type="text" name="username" id="username" required autofocus/>
+      <div class="input-box" id="username-box">
+        <input type="text" name="username" id="username" required autofocus/>
+      </div>
       <label for="password">Password:</label>
-      <input type="password" name="password" id="password" required/>
+      <div class="input-box" id="password-box">
+        <input type="password" name="password" id="password" required/>
+      </div>
       <button type="submit">Sign in</button>
     </form>
   </main>

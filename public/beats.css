@@ -1,0 +1,37 @@
+ul {
+    margin: 0 1.2rem;
+}
+
+li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    'title genre tempo key price';
+    margin: 1.3rem 0;
+    padding: 0 0 1rem 0;
+    border-bottom: 2px solid grey;
+}
+
+span {
+    text-align: center;
+}
+
+#title {
+    grid-area: title;
+}
+
+#genre {
+    grid-area: genre;
+}
+
+#tempo {
+    grid-area: tempo;
+}
+
+#key {
+    grid-area: key;
+}
+
+.price {
+    grid-area: price;
+}
