@@ -19,15 +19,15 @@
         <form action="/users/<%= user._id %>/beats" method="POST" class="form-container">
             <div class="input-box-row">
                 <label for="title">Title:</label>
-                <input type="text" name="title" id="title">
+                <input type="text" name="title" id="title" required>
                 <label for="genre">Genre:</label>
-                <input type="text" name="genre" id="genre">
+                <input type="text" name="genre" id="genre" required>
             </div>
             <div class="input-box-row">
                 <label for="tempo">Tempo:</label>
-                <input type="number" name="tempo" id="tempo" maxlength="3">
+                <input type="number" name="tempo" id="tempo" maxlength="3" required>
                 <label for="keyLetter">Key:</label>
-                <select name="keyLetter" id="keyLetter">
+                <select name="keyLetter" id="keyLetter" required>
                     <option></option>
                     <option value="C">C</option>
                     <option value="D">D</option>
@@ -52,7 +52,7 @@
             </div>
             <div class="input-box-row">
                 <label for="price">Price:</label>
-                <input type="numer" name="price" id="price">
+                <input type="numer" name="price" id="price" required>
             </div>
             <button type="submit">Upload</button>
         </form>
