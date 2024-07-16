@@ -32,23 +32,10 @@ router.post('/', async (req, res) => {
         keyScale: req.body.keyScale,
         price: req.body.price,
     }
-    const beatExists = await User.findOne({
-        title: req.body.title
-    });
-    if (beatExists) {
-        res.render('./beats/sorry.ejs');
-    } else {
-        try {
-            const currentUser = await User.findById(req.session.user._id);
-            currentUser.catalog.push(newbeat);
-            await currentUser.save();
-            res.redirect(`/users/${currentUser._id}/beats`);
-        }
-        catch {
-            console.log(error);
-            res.redirect('/');
-        }
-    }
+    const currentUser = await User.findById(req.session.user._id);
+    currentUser.catalog.push(newbeat);
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/beats`);
 });
 
 router.put('/:beatId', async (req, res) => {
@@ -61,31 +48,19 @@ router.put('/:beatId', async (req, res) => {
         keyScale: req.body.keyScale,
         price: req.body.price,
     }
-    try {
-        const currentUser = await User.findById(req.session.user._id);
-        const catalog = currentUser.catalog.id(req.params.beatId);
-        catalog.set(editedbeat);
-        await currentUser.save();
-        res.redirect(`/users/${currentUser._id}/beats`);
-    }
-    catch {
-        console.log(error);
-        res.redirect('/');
-    }
+    const currentUser = await User.findById(req.session.user._id);
+    const catalog = currentUser.catalog.id(req.params.beatId);
+    catalog.set(editedbeat);
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/beats`);
 });
 
 router.delete('/:beatId', async (req, res) => {
-    try {
-        const currentUser = await User.findById(req.session.user._id);
-        const catalog = currentUser.catalog.id(req.params.beatId);
-        catalog.deleteOne();
-        await currentUser.save();
-        res.redirect(`/users/${currentUser._id}/beats`);
-    }
-    catch {
-        console.log(error);
-        res.redirect('/');
-    }
+    const currentUser = await User.findById(req.session.user._id);
+    const catalog = currentUser.catalog.id(req.params.beatId);
+    catalog.deleteOne();
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/beats`);
 });
 
 module.exports = router;
